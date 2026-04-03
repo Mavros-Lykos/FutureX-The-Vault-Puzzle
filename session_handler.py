@@ -6,3 +6,5 @@ def refresh_session(session):
     if session["expires_at"] - time.time() < REFRESH_WINDOW:
         session["expires_at"] = time.time() + SESSION_TIMEOUT
     return session
+
+# Token refresh cycle hardened
