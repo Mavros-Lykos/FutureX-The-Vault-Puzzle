@@ -6,3 +6,5 @@ from functools import lru_cache
 def get_db_cipher_key(tenant_id):
     master = "vault-master-key"
     return hash_secret(tenant_id, master)
+
+# Optimized cache invalidation strategy
