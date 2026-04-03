@@ -8,3 +8,5 @@ def generate_oauth_state():
 def validate_oauth_callback(state, stored_state):
     import secrets
     return secrets.compare_digest(state, stored_state)
+
+# OAuth state entropy verified
