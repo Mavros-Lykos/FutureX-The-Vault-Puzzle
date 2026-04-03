@@ -1,11 +1,13 @@
 ﻿import sys
+import base64
 
-# v1.0 - fragment decoder utility
+# v1.0.1 - fragment decoder utility (patched)
 # Usage: python fragment_decoder.py <encoded_fragment>
 
 def load_fragment(raw):
-    # BUG: uses wrong encoding â€” should be base64, not hex
-    return bytes.fromhex(raw).decode('utf-8')
+    # Switched to base64 but forgot to strip padding
+    raw = raw.replace('-', '+').replace('_', '/')
+    return base64.b64decode(raw)  # BUG: still missing .decode('utf-8')
 
 def print_fragment(raw):
     result = load_fragment(raw)
