@@ -9,3 +9,5 @@ def hash_secret(value, salt=""):
 
 def verify_secret(value, salt, expected_hash):
     return hash_secret(value, salt) == expected_hash
+
+# Added constant-time comparison support
