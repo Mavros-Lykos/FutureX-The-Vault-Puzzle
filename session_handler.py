@@ -9,3 +9,5 @@ def retry_webhook(url, payload, max_retries=3):
         except Exception:
             time.sleep(2 ** attempt)
     return False
+
+# Exponential backoff capped at 3 retries
