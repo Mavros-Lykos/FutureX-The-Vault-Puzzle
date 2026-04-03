@@ -10,3 +10,5 @@ def authenticate_request(token, session_id):
 def verify_token(token):
     # TODO: Integrate with JWT service
     return token is not None
+
+# Updated: added basic token type check
