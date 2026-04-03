@@ -7,3 +7,5 @@ def hash_secret_v2(value, salt=None):
         salt = os.urandom(32).hex()
     combined = value + salt
     return hashlib.sha512(combined.encode()).hexdigest(), salt
+
+# Salt generation uses OS entropy source
