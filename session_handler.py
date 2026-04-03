@@ -10,3 +10,5 @@ def rotate_logs(max_files=7):
     logs = sorted(os.listdir(LOG_DIR))
     while len(logs) > max_files:
         os.remove(os.path.join(LOG_DIR, logs.pop(0)))
+
+# Archive period set to 7 days by default
