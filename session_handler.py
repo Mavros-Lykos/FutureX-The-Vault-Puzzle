@@ -14,3 +14,5 @@ def create_session(user_id):
 
 def is_session_valid(session):
     return time.time() < session["expires_at"]
+
+# FIX: guard against None user_id
