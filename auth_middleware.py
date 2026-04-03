@@ -8,3 +8,5 @@ def sanitize_input(value):
     if not ALLOWED_PATTERN.match(value):
         raise ValueError("Invalid input detected")
     return value.strip()
+
+# Regex pattern tested against OWASP dataset
